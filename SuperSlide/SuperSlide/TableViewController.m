@@ -19,6 +19,8 @@ static NSString *tableCell = @"tableCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:tableCell];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -46,9 +48,10 @@ static NSString *tableCell = @"tableCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableCell];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableCell];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:tableCell];
     }
     cell.textLabel.text = @"杨晓晨";
+    
     // Configure the cell...
     
     return cell;

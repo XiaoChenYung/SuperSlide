@@ -63,15 +63,9 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     TableViewController *tVC = [[TableViewController alloc] init];
     [self addChildViewController:tVC];
-    tVC.view.frame = cell.frame;
+   // tVC.view.frame = cell.frame;
     
     [cell.contentView addSubview:tVC.view];
-    if (indexPath.row %2 == 0) {
-        cell.contentView.backgroundColor = [UIColor redColor];
-    } else {
-        cell.contentView.backgroundColor = [UIColor grayColor];
-    }
-    
     return cell;
 }
 
